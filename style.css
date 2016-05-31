@@ -1,0 +1,39 @@
+h1 {
+	margin: 0;
+}
+
+.card-container {
+	/* this defines how many pixels a 3d element is placed from view */
+	perspective: 700;
+}
+
+.card {
+	position: relative;
+	color: #fff;
+	text-align: center;
+	line-height: 200px;
+	margin: 20px	;
+	width: 200px;
+	height: 200px;
+	transition: all 0.8s ease; /*the lower the second, the faster it flips*/
+	transform-style: preserve-3d; /*need this in order to see back*/
+}
+
+.front, .back {
+	background: #5677fc;
+	width: 200px;
+	height: 200px;
+	position: absolute; /*this is to make sure the box stay in same place*/
+	top: 0;
+	left: 0;
+	backface-visibility: hidden; /*ability to see the content from behind*/
+}
+
+.back {
+	/* this is to make sure the text or image is facing right way */
+	transform: rotateY(180deg);
+}
+
+.card:hover {
+	transform: rotateY(180deg); 
+}
